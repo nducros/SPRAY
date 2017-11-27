@@ -1,0 +1,29 @@
+defaultREC
+initREC
+forward
+recon_GN
+	> initGNsol
+	> initGNplot
+	> fwd
+		> valRegul
+			> priorRegul
+				> psiRegul
+	> plotGNplot
+		> displayVec
+		> priorRegul
+	> buildJacobian
+	> gradRegul
+		> dpsiRegul
+		> gradientMat2
+		> laplacian
+			> gradientMat
+	> hessRegul
+		> ddpsiRegul
+		> gradientMat2
+		> laplacian
+			> gradientMat
+		> interlock
+	> hessData
+	> toastLineSearch
+plotMatError
+plotCost_k
